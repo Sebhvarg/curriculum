@@ -1,0 +1,102 @@
+* {
+    font-family: 'Fira Sans',sans-serif;
+    font-weight: 400;
+    background-color: #fbfdfc;
+}
+.abeezee-regular {
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.abeezee-regular-italic {
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+h1 {
+    color: #002651;
+    font-size: 50px;
+    text-align: center;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 800;
+}
+
+#photo{
+    width: 200px;
+    height: auto;
+}
+
+.subtitle{
+    color:  #9489b0;
+    text-transform: uppercase;
+}
+
+section {
+
+    /* margen (espacio externo) superior, derecho, abajo e izquierda */
+    margin: 4px 2px 8px 2px; 
+ 
+    /* borde de grosor 0.2 en puntos, estilo sólido y color hexadecimal #cedddd  */
+    border: 0.5pt solid #9489b0; 
+ 
+    /* relleno (espacio interno) de 
+    1.5% en la parte superior e inferior y 
+    0.8% a los lados derecho e izquierdo. */
+ 
+    padding: 1.5% 0.8%; 
+ 
+    /* reemplazan el 0.8% inicial en el relleno izquierdo y derecho, 
+    dándoles un valor específico de 1.2% para esos lados. */
+ 
+    padding-left: 1.2%; 
+    padding-right: 1.2%;
+           /* borde redondeado con un radio de 5 píxeles */
+
+   /* en navegadores basados en WebKit, 
+   como versiones antiguas de Safari y Chrome. */
+   -webkit-border-radius: 5px; 
+
+   /* en navegadores antiguos de Mozilla, 
+   como Firefox.  */
+   -moz-border-radius: 5px;    
+
+   /* en navegadores modernos. */
+   border-radius: 5px;     
+    
+    -webkit-box-shadow: 3px 3px 1px 0px #002651;
+    -moz-box-shadow: 3px 3px 1px 0px #002651;
+    box-shadow: 3px 3px 1px 0px #002651;
+
+    
+
+  }
+  nav{
+    background-color: #002651;
+    padding: 10px;
+    text-align: center;
+  }
+
+    nav a{
+        text-decoration: none;
+        padding: 10px;
+        background-color: #002651;
+        color: #fbfdfc;
+    }
+
+    nav ul{
+        list-style-type: none;
+        background-color: #002651;
+    }
+
+    nav li{
+        display: inline;
+        padding: 10px;
+        background-color: #002651;
+    }
+
+    nav a ::hover{
+        color: #d80909;
+    }
