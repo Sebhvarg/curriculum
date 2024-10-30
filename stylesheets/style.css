@@ -200,7 +200,10 @@ section {
   background-color: transparent;
 }
 
+h3{
+  font-weight: 550;
 
+}
 
 #experiencia .icono1 {
   background-color: transparent;
@@ -209,12 +212,10 @@ section {
   
 }
 
-#educacion{
-  display: grid;
-  justify-content: space-around;
-  align-items: stretch;
-  grid-template-areas: "A A"
-    "B C"
+.imgEd {
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
 }
 
 
