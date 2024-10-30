@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --background-color: #F0F4F7;
+  --background-color: #ffffff;
   --primary-color: #162623;
-  --second-color: #EB5B38;
+  --second-color: #59787A;
   --tercer--color: #295254;
   --font: 'Fire Sans', sans-serif;
   --font-title: 'ABeeZee', sans-serif;
@@ -150,24 +150,6 @@ section {
   grid-area: B;
 }
 
-#resumen img {
-  grid-area: D;
-}
-
-#resumen h3 {
-  text-align: center;
-  grid-area: C;
-}
-
-#resume #p2 {
-  grid-area: F;
-}
-
-#resumen #LogoMarca {
-  grid-area: E;
-  width: 200px;
-  height: auto;
-}
 
 #experiencia{
   display: flex;
@@ -184,51 +166,317 @@ section {
 }
 
 #experiencia .showExperience{
-  flex: 1 1 50%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;  
+  
   width: 100%;
   text-align: left;
-  border: #162623 2px solid;
   border-radius: 15px;
   padding: 0px 50px 50px 50px;
-  margin-top: 50px;
+  height: auto;
   
 }
+.detallesExperiencia{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 25px 50px 25px 50px;
 
-#experiencia img {
-  height: auto;
-  max-width: 200px;
-  background-color: transparent;
 }
+
+
+#educacion{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  position: relative;
+}
+
+#educacion .subtitle {
+  flex: 1 1 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#educacion ol {
+  list-style-type: none;
+  counter-reset: item;
+  padding: 0;
+  margin: 0;
+}
+
+#educacion ol li {
+  counter-increment: item;
+  margin-bottom: 10px;
+  padding: 30px 50px;
+  background-color: #F0F4F7;
+  border-radius: 15px;
+  position: relative;
+  width: 90vh;
+
+}
+
+#educacion ol li::before {
+  content: counter(item);
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  font-weight: 800;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  left: -50px;
+  top: 0;
+}
+
+#educacion ol li h3{
+  margin-top: -5px;
+  font-weight: 550;
+
+}
+
+#educacion ol li div img {
+  width: 90px;  
+}
+
+
+
+
 
 h3{
   font-weight: 550;
 
 }
 
-#experiencia .icono1 {
-  background-color: transparent;
+
+#habilidades{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
   position: relative;
-  transform: translateY(-50%) ;
+  
+}
+#habilidades .subtitle {
+  flex: 1 1 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+
+/* Estilos para la tabla */
+/* Hacer tabla responsva */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 50px 0;
+}
+
+table tbody tr :hover {
+  background-color: #F0F4F7;
+  color: var(--primary-color);
+  cursor:crosshair;
+}
+table tbody tr td {
+  padding: 50px;
+  text-align: center;
+  border-radius: 15px;
+  
   
 }
 
-.imgEd {
+table tbody tr td img {
   width: 80px;
   height: auto;
-  margin-right: 10px;
 }
+
 
 
 section form {
 
   /* Modelo de diseño en cuadrícula */
   display: grid;
+
+
   row-gap: 0.8rem;
 
 }
 
-footer {
-  background-color: var(--primary-color);
-  text-align: center;
-  margin: 0 auto;
+section form label {
+  color: var(--background-color);
+  /* Alineación de texto a la derecha */
+  text-align: right;
+
 }
+/* Colocar 2 filas y 2 columnas con grid template area*/
+footer {
+  background-color: var(--tercer--color);
+  display: grid;
+  grid-template-areas: "A B"
+    "C D";
+  padding: 20px;
+}
+
+footer #formulario{
+  grid-area: A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 0;
+  text-align: left;
+  
+}
+
+footer #formulario form label {
+  color: var(--background-color);
+  /* Alineación de texto a la derecha */
+  text-align: right;
+}
+#formulario form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid var(--background-color);
+}
+#formulario form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid var(--background-color);
+  resize: none;
+}
+
+footer #formulario form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid var(--background-color);
+  background-color: var(--background-color);
+  color: var(--tercer--color);
+  font-weight: 800;
+
+}
+
+#enviar:hover {
+  background-color: var(--second-color);
+  color: var(--background-color);
+  cursor: pointer;
+}
+
+footer #location{
+  grid-area: B;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+} 
+
+footer #location h3{
+  color: var(--background-color);
+  font-size: 20px;
+  text-align: center;
+
+
+}
+footer #formulario h3{
+  color: var(--background-color);
+  font-size: 20px;
+  text-align: center;
+
+
+}
+
+footer #social{
+  grid-area: C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  
+
+
+}
+footer #social ul{
+  display: flex;
+  justify-content: center;
+  align-items: right;
+}
+
+
+
+footer #social ul li{
+  margin: 0 50px;
+  padding: 0 50px;
+  text-align: center;
+  display: inline;
+  list-style: none;
+  display: inline;
+  text-align: center;
+
+}
+footer #social ul li a{
+  text-decoration: none;
+  color: var(--background-color);
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-title);
+}
+footer #social ul li a h3{
+  margin-bottom: 70px;
+}
+footer #social ul li a :hover{
+  color: var(--second-color);
+  cursor: pointer;
+}
+
+footer #social ul li img{
+  width: 70px;
+}
+
+footer #video{
+  grid-area: D;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+footer #descargar {
+  background-color: var(--background-color);
+  color: var(--tercer--color);
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--background-color);
+  text-decoration: none;
+}
+
+ #descargar a{
+  text-decoration: none;
+  color: var(--tercer--color);
+  font-weight: 800;
+  font-size: 20px;
+  font-family: var(--font-title);
+}
+
+footer #descargar:hover {
+  background-color: var(--second-color);
+  color: var(--background-color);
+  cursor: pointer;
+}
+
