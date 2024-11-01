@@ -188,7 +188,10 @@ section {
   align-items: stretch;
   grid-template-areas: "A A"
     "B C"
+    ;
+  
 }
+
 
 #resumen #presentacion{
   grid-area: A;
@@ -197,24 +200,31 @@ section {
   align-items: center;
   flex-wrap: wrap;
   margin: 0 auto; 
+  margin-bottom: 50px;
+  
+  
+
 }
 
-#presentacion div{
+#resumen #presentacion div{
+
   margin-left: 50px;
-  padding: 0;
-  text-align: center;
-
-
 }
+
 
 #resumen #sobreMi{
   grid-area: B;
   display: grid;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   margin: 0 auto;
-  padding: 0;
+  text-align: justify;
+  
+  border-radius: 15px;
+  width: 80%;
+
+  
+}
+
+#resumen h2{
   text-align: center;
 }
 
@@ -225,17 +235,31 @@ section {
   align-items: center;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 0;
-  text-align: center;
+
+  
+  text-align: justify;
+  border-radius: 15px;
+  width: 80%;
 
 }
 #marcapersonal{
-  width: 20%;
+  width: 20vh;
   height: auto;
   margin: 0 auto;
   padding: 0;
 }
 
+@media screen and (max-width: 1300px) {
+ #resumen{
+  display: grid;
+  justify-content: space-around;
+  align-items: stretch;
+  grid-template-areas: "A"
+    "B"
+    "C"
+    ;
+ } 
+}
 
 #experiencia{
   display: flex;
@@ -368,6 +392,38 @@ section {
 }
 
 
+@media screen and (max-width: 1300px) {
+#educacion ol {
+width: 55vh;
+
+
+}
+#educacion ol li {
+  width: 55vh;
+  padding: 30px 20px;
+
+
+}
+}
+
+@media screen and (max-width: 600px) {
+  #educacion ol {
+  width: 35vh;
+  
+  
+  }
+  #educacion ol li {
+    width: 35vh;
+    padding: 20px 10px;
+
+    font-size: 9pt;
+  
+  }
+
+  #educacion ol li div img {
+    width: 50px;  
+  }
+}
 
 
 
@@ -488,6 +544,44 @@ table tbody tr td {
   opacity: 1;
 }
 
+@media screen and (max-width: 1300px) {
+  #proyectos #imagenes{
+    display: flex;
+    width: 600px;
+    height: 450px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+  }
+  #proyectos #imagenes img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 1;
+    transition: 1s ease;
+  }
+  #proyectos #imagenes img:hover{
+    cursor: pointer;
+    width: 400px;
+    opacity: 1;
+  }
+  
+}
+@media screen and (max-width: 600px) {
+  #proyectos #imagenes{
+    display: flex;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+
+  
+  }
+    
+  
+}
+
 section form {
 
   /* Modelo de diseño en cuadrícula */
@@ -567,25 +661,17 @@ footer #formulario form button {
 
 footer #location{
   grid-area: B;
-  display: grid;
   justify-content: center;
   align-items: center;
 } 
-
-footer #location h3{
-  color: var(--background-color);
+footer h3{
   font-size: 20px;
-  text-align: center;
+  
+  color: var(--background-color);
 
 
 }
-footer #formulario h3{
-  color: var(--background-color);
-  font-size: 20px;
-  text-align: center;
 
-
-}
 
 footer #social{
   grid-area: C;
@@ -640,7 +726,6 @@ footer #social ul li img{
 
 footer #video{
   grid-area: D;
-  display: grid;
   justify-content: center;
   align-items: center;
 }
@@ -676,6 +761,123 @@ footer #descargar a:hover {
   
 }
 
+@media screen and (max-width: 1300px) {
+  footer{
+    display: grid;
+    grid-template-areas: "A" 
+    "B"
+    "C"
+    "D";
+    padding: 10px;
+    width: 100%;
 
-/* foooter responsive */
+  }
+  footer #formulario{
+    grid-area: A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 0;
+    text-align: left;
+    
+    
+  }
+  footer #social{
+    grid-area: B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    
+  }
+  footer #location{
+    grid-area: C;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
 
+
+  }
+  footer #mapa{
+    width: 55vh;
+  }
+
+  footer #video{
+    grid-area: D;
+    margin: 0 auto;
+    text-align: center;
+    
+  }
+  footer #intro{
+    width: 55vh;
+    
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+  footer{
+    display: grid;
+    grid-template-areas: "A" 
+    "B"
+    "C"
+    "D";    
+    width: 100%;
+
+  }
+  footer #formulario{
+    grid-area: A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 0;
+    text-align: left;
+    width: 40vh;
+    
+  }
+  footer #social{
+    grid-area: B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 20vh;
+    
+  }
+  footer #location{
+    grid-area: C;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+  footer #mapa{
+    width: 45vh;
+  }
+
+  footer #video{
+    grid-area: D;
+    margin: 0 auto;
+    text-align: center;
+    
+  }
+
+  footer #intro{
+    width: 45vh;
+    
+  }
+
+}
