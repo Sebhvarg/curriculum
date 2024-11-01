@@ -15,6 +15,12 @@
   font-weight: 400;
   
 }
+html {
+  scroll-behavior:smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--background-color);
+}
+
 
 body {
   background-color: var(--background-color);
@@ -59,6 +65,8 @@ nav {
 
 }
 
+
+
 nav a {
   background-color: var(--background-color);
   text-decoration: none;
@@ -83,6 +91,46 @@ nav li {
 nav ul li :hover {
   color: var(--tercer--color);
 
+}
+/* nav responsive */
+@media screen and (max-width: 1300px) {
+  nav{
+    position: relative;
+    text-align: center;
+  }
+  nav ul {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+  
+}
+@media screen and (max-width: 600px) {
+  nav{
+    position: relative;
+    text-align: center ;
+  }
+  nav ul {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+  }
+
+  nav ul li {
+    margin: 10px 0;
+
+  }
+  
 }
 section {
 
@@ -124,8 +172,11 @@ section {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
+  filter: drop-shadow(0 0 10px var(--primary-color));
 
 }
+
+
 
 .subtitle {
   color: var(--tercer--color);
@@ -135,19 +186,54 @@ section {
   display: grid;
   justify-content: space-around;
   align-items: stretch;
-  grid-template-areas: "A D"
-    "B D"
-    "C E"
-    "F E";
+  grid-template-areas: "A A"
+    "B C"
 }
 
-#resumen .subtitle {
+#resumen #presentacion{
   grid-area: A;
-  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto; 
 }
 
-#resumen #p1 {
+#presentacion div{
+  margin-left: 50px;
+  padding: 0;
+  text-align: center;
+
+
+}
+
+#resumen #sobreMi{
   grid-area: B;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+#resumen #marca{
+  grid-area: C;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+
+}
+#marcapersonal{
+  width: 20%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
 }
 
 
@@ -184,6 +270,43 @@ section {
 
 }
 
+#experiencia img {
+  width: 20vh;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+@media  (max-width: 1300px) {
+  #experiencia .showExperience{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;  
+    
+    width: 100%;
+    text-align: left;
+    border-radius: 15px;
+    padding: 0px 50px 50px 50px;
+    height: auto;
+    
+  }
+  
+}
+
+@media  (max-width: 600px) {
+  #experiencia .showExperience{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;  
+    
+    width: 100%;
+    text-align: left;
+    border-radius: 15px;
+    padding: 0px 50px 50px 50px;
+    height: auto;
+    
+  }
+  
+}
 
 #educacion{
   display: flex;
@@ -277,6 +400,8 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 50px 0;
+
+  
 }
 
 table tbody tr :hover {
@@ -291,13 +416,77 @@ table tbody tr td {
   
   
 }
+/* Responsive: en pantallas pequeñas */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  th, td {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 1300px) {
+  table {
+    border: 0;
+  }
 
-table tbody tr td img {
-  width: 80px;
-  height: auto;
+  table caption {
+    font-size: 1.3em;
+  }
+
+  tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas en cada fila */
+    margin-bottom: 10px;
+  }
+
+  td {
+    padding: 10px;
+    text-align: left;
+    position: relative;
+  }
+
+  /* Añadir etiquetas en móviles */
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
 }
 
+#proyectos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  position: relative;
+  text-align: center;
+}
 
+#proyectos #imagenes{
+
+  display: flex;
+  width: 800px;
+  height: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 10px 10px 10px 10px;
+}
+#proyectos #imagenes img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 1;
+  transition: 1s ease;
+}
+#proyectos #imagenes img:hover{
+  cursor: pointer;
+  width: 600px;
+  opacity: 1;
+}
 
 section form {
 
@@ -479,4 +668,14 @@ footer #descargar:hover {
   color: var(--background-color);
   cursor: pointer;
 }
+footer #descargar a:hover {
+
+  color: var(--background-color);
+  cursor: pointer;
+
+  
+}
+
+
+/* foooter responsive */
 
