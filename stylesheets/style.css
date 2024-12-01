@@ -602,68 +602,12 @@ section form label {
 footer {
   background-color: var(--tercer--color);
   display: grid;
-  grid-template-areas: "A B"
-    "C D";
+  grid-template-areas: "C";
   padding: 20px;
 }
 
-footer #formulario{
-  grid-area: A;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  margin-top: 40px;
-  padding: 0;
-  text-align: left;
-  
-}
 
-footer #formulario form label {
-  color: var(--background-color);
-  /* Alineación de texto a la derecha */
-  text-align: right;
-}
-#formulario form input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid var(--background-color);
-}
-#formulario form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid var(--background-color);
-  resize: none;
-}
 
-footer #formulario form button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  color: var(--tercer--color);
-  font-weight: 800;
-
-}
-
-#enviar:hover {
-  background-color: var(--second-color);
-  color: var(--background-color);
-  cursor: pointer;
-}
-
-footer #location{
-  grid-area: B;
-  justify-content: center;
-  align-items: center;
-} 
 footer h3{
   font-size: 20px;
   
